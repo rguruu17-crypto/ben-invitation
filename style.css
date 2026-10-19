@@ -1767,36 +1767,75 @@ body {
     margin: 0.5rem 0;
   }
 
+  .story-timeline-section {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
   .timeline-central-stem {
-    left: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    opacity: 0.35;
   }
 
   .timeline-node {
-    left: 20px;
-    top: 0;
-    transform: translate(-50%, -50%);
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    margin: 0 auto 1.2rem auto;
+    display: flex;
+    justify-content: center;
+    z-index: 5;
   }
 
   .timeline-row {
-    grid-template-columns: 1fr;
-    gap: 1.2rem;
-    padding-left: 45px;
-    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 3.2rem;
+    width: 100%;
+  }
+
+  .timeline-col-card {
+    order: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 0.9rem;
+  }
+
+  .timeline-col-card .polaroid-card {
+    max-width: 275px;
+    margin: 0 auto;
+  }
+
+  .timeline-col-text {
+    order: 2;
+    text-align: center;
+    padding: 0 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .row-left .timeline-col-card,
   .row-right .timeline-col-card {
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   .row-left .timeline-col-text,
   .row-right .timeline-col-text {
-    text-align: left;
-    padding: 0;
-  }
-
-  .timeline-col-card .polaroid-card {
-    max-width: 280px;
+    text-align: center;
+    padding: 0 1rem;
   }
 }
 
@@ -2873,29 +2912,101 @@ body {
     transform: translate(0, 0) scale(1) !important;
   }
 
-  /* Timeline Stem & Node refinement on mobile */
+  /* Center-Aligned Timeline on Mobile */
+  .story-timeline-section {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
   .timeline-central-stem {
-    left: 14px;
-  }
-
-  .timeline-node {
-    left: 14px;
-    width: 28px;
-    height: 28px;
-  }
-
-  .timeline-year-tag {
-    font-size: 0.72rem;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 2px !important;
+    opacity: 0.35 !important;
   }
 
   .timeline-row {
-    padding-left: 36px;
-    margin-bottom: 2.4rem;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-bottom: 3.2rem !important;
+    width: 100% !important;
+  }
+
+  .timeline-node {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    margin: 0 auto 1.2rem auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    z-index: 5 !important;
+  }
+
+  .timeline-year-tag {
+    font-size: 0.82rem !important;
+    padding: 0.38rem 0.95rem !important;
+    border-radius: 6px !important;
+    box-shadow: 0 4px 12px rgba(122, 31, 45, 0.35) !important;
+    display: inline-block !important;
+  }
+
+  .timeline-col-card {
+    order: 1 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin-bottom: 0.9rem !important;
+  }
+
+  .timeline-col-card .polaroid-card {
+    max-width: 275px !important;
+    margin: 0 auto !important;
+  }
+
+  .timeline-col-text {
+    order: 2 !important;
+    text-align: center !important;
+    padding: 0 1rem !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .row-left .timeline-col-card,
+  .row-right .timeline-col-card {
+    justify-content: center !important;
+  }
+
+  .row-left .timeline-col-text,
+  .row-right .timeline-col-text {
+    text-align: center !important;
+    padding: 0 1rem !important;
   }
 
   .timeline-quote {
-    font-size: 1.1rem;
-    line-height: 1.4;
+    font-size: 1.15rem !important;
+    line-height: 1.45 !important;
+    text-align: center !important;
+  }
+
+  /* Timeline Node animation on mobile */
+  .timeline-row.story-reveal .timeline-node {
+    transform: scale(0.75) translateY(8px) !important;
+    opacity: 0 !important;
+  }
+
+  .timeline-row.story-reveal.is-revealed .timeline-node {
+    transform: scale(1) translateY(0) !important;
+    opacity: 1 !important;
   }
 
   /* Form controls: 16px font-size prevents iOS Safari auto-zoom on focus */
