@@ -2828,13 +2828,38 @@ body {
    MOBILE & SMALL SCREEN OPTIMIZATIONS
    ========================================================================== */
 
-/* Universal mobile prevent horizontal overflow */
+/* Universal mobile prevent horizontal overflow & tap improvements */
 html, body {
   overflow-x: hidden !important;
   max-width: 100vw;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 @media (max-width: 768px) {
+  /* Layout Spacing & Typography */
+  .container {
+    padding: 0 1.15rem;
+  }
+
+  .section {
+    padding: 4.2rem 0 3.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 5.5vw, 2.25rem);
+    margin-bottom: 0.6rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.05rem;
+    margin-bottom: 2.2rem;
+    line-height: 1.45;
+  }
+
   /* Safe mobile entrance for story reveal to eliminate horizontal jitter */
   .story-reveal.reveal-left,
   .story-reveal.reveal-right,
@@ -2848,6 +2873,31 @@ html, body {
     transform: translate(0, 0) scale(1) !important;
   }
 
+  /* Timeline Stem & Node refinement on mobile */
+  .timeline-central-stem {
+    left: 14px;
+  }
+
+  .timeline-node {
+    left: 14px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .timeline-year-tag {
+    font-size: 0.72rem;
+  }
+
+  .timeline-row {
+    padding-left: 36px;
+    margin-bottom: 2.4rem;
+  }
+
+  .timeline-quote {
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+
   /* Form controls: 16px font-size prevents iOS Safari auto-zoom on focus */
   .form-input,
   select.form-input,
@@ -2859,11 +2909,70 @@ html, body {
   .events-timeline {
     gap: 1.5rem;
   }
+
   .event-card {
     padding: 2.2rem 1.4rem;
   }
+
   .event-card.muhurtham-card {
     transform: none !important;
+  }
+
+  /* Venue Card on Mobile */
+  .venue-card-wrapper {
+    padding: 2rem 1.4rem;
+    gap: 2rem;
+    border-radius: 14px;
+  }
+
+  .venue-name-highlight {
+    font-size: 1.55rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .venue-desc {
+    font-size: 1.02rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .venue-btn-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.8rem;
+  }
+
+  .venue-btn-group a,
+  .venue-btn-group button {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Wishes Form */
+  .wishes-form {
+    padding: 2rem 1.4rem;
+    border-radius: 14px;
+  }
+
+  /* RSVP Modal */
+  .modal-backdrop {
+    padding: 0.8rem;
+  }
+
+  .modal-dialog {
+    padding: 2.4rem 1.35rem 1.8rem;
+    border-radius: 14px;
+    max-height: 92vh;
+  }
+
+  .modal-close-btn {
+    top: 1rem;
+    right: 1.1rem;
+    font-size: 1.9rem;
+  }
+
+  .modal-title {
+    font-size: 1.5rem;
   }
 }
 
@@ -2873,26 +2982,32 @@ html, body {
     top: 0.5rem;
     width: 96%;
   }
+
   .pill-navbar {
     gap: 0.4rem;
     padding: 4px 6px;
     justify-content: space-between;
   }
+
   .pill-monogram-badge {
     padding: 5px 12px;
   }
+
   .monogram-text {
     font-size: 0.78rem;
     letter-spacing: 0.08em;
   }
+
   .pill-nav-links {
     gap: 0.5rem;
     padding: 0;
   }
+
   .pill-nav-item {
     font-size: 0.62rem;
     letter-spacing: 0.04em;
   }
+
   .pill-rsvp-btn {
     padding: 5px 12px;
     font-size: 0.64rem;
@@ -2903,45 +3018,58 @@ html, body {
   .roots-split-stage {
     gap: 0.35rem;
   }
+
   .roots-center-trail {
     width: 48px;
   }
+
   .trail-arc-wrapper {
     margin-top: 65px;
   }
+
   .trail-arc-svg {
     width: 62px;
     height: 30px;
   }
+
   .story-root-card {
     min-width: 0;
     width: 100%;
   }
+
   .landmark-character-scene {
     height: 190px;
   }
+
   .ripped-landmark-card {
     height: 155px;
     width: 88%;
   }
+
   .sticker-boy {
     height: 155px;
   }
+
   .sticker-girl {
     height: 142px;
   }
+
   .left-card .scene-traveler-sticker {
     right: 20px;
   }
+
   .right-card .scene-traveler-sticker {
     left: 4px;
   }
+
   .script-city {
     font-size: 1.05rem;
   }
+
   .script-subtitle {
     font-size: 0.95rem;
   }
+
   .script-tag {
     font-size: 0.9rem;
   }
@@ -2955,6 +3083,7 @@ html, body {
     width: 100%;
     margin-bottom: 2rem;
   }
+
   .timer-box {
     min-width: 62px;
     flex: 1 1 0;
@@ -2962,14 +3091,17 @@ html, body {
     padding: 0.85rem 0.25rem;
     border-radius: 8px;
   }
+
   .timer-number {
     font-size: 1.55rem;
     margin-bottom: 0.25rem;
   }
+
   .timer-label {
     font-size: 0.6rem;
     letter-spacing: 0.06em;
   }
+
   .timer-sep {
     font-size: 1.25rem;
     margin-top: -0.4rem;
@@ -2980,13 +3112,24 @@ html, body {
     right: 1rem;
     bottom: 1rem;
   }
+
   .petal-widget {
     right: 4.4rem;
     bottom: 1rem;
   }
+
   .audio-toggle-btn {
     width: 42px;
     height: 42px;
+  }
+
+  /* Venue Card on small phones */
+  .venue-card-wrapper {
+    padding: 1.6rem 1.15rem;
+  }
+
+  .wishes-form {
+    padding: 1.6rem 1.15rem;
   }
 }
 
@@ -2996,21 +3139,27 @@ html, body {
   .pill-nav-links .pill-nav-item:nth-child(4) {
     display: none; /* Keep primary Our Story & Events visible to avoid wrapping */
   }
+
   .pill-monogram-badge {
     padding: 4px 8px;
   }
+
   .pill-rsvp-btn {
     padding: 4px 8px;
   }
+
   .timer-box {
     min-width: 54px;
     padding: 0.75rem 0.15rem;
   }
+
   .timer-number {
     font-size: 1.35rem;
   }
+
   .timer-label {
     font-size: 0.55rem;
   }
 }
+
 
