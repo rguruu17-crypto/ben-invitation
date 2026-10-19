@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavDrawer();
   initCountdownTimer();
   initPetalSimulation();
-  initWebAudioSynthesizer();
+  initTamilLoveMusic();
   initStoryScrollReveal();
 });
 
@@ -247,144 +247,76 @@ function initPetalSimulation() {
 }
 
 /* ==========================================================================
-   5. WEB AUDIO TRADITIONAL AUSPICIOUS CARNATIC MELODY SYNTHESIZER
+   5. TAMIL ROMANTIC LOVE MUSIC PLAYER ENGINE
    ========================================================================== */
-let audioCtx = null;
 let isAudioPlaying = false;
-let audioTimer = null;
-let masterGain = null;
 
-function initWebAudioSynthesizer() {
+function initTamilLoveMusic() {
   const audioBtn = document.getElementById('audio-toggle');
   const tooltip = document.getElementById('audio-tooltip');
-  if (!audioBtn) return;
+  const icon = document.getElementById('audio-icon');
+  const audioEl = document.getElementById('wedding-audio');
 
-  audioBtn.addEventListener('click', () => {
-    if (!isAudioPlaying) {
-      startWeddingMelody();
-      audioBtn.classList.add('playing');
-      document.getElementById('audio-icon').textContent = '❚❚';
-      if (tooltip) tooltip.textContent = 'Pause Music';
-    } else {
-      stopWeddingMelody();
-      audioBtn.classList.remove('playing');
-      document.getElementById('audio-icon').textContent = '▶';
-      if (tooltip) tooltip.textContent = 'Play Traditional Music';
-    }
-  });
-}
+  if (!audioBtn || !audioEl) return;
 
-function startWeddingMelody() {
-  try {
-    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-    if (!audioCtx) {
-      audioCtx = new AudioContextClass();
-    }
+  // Set gentle initial volume
+  audioEl.volume = 0.65;
 
-    if (audioCtx.state === 'suspended') {
-      audioCtx.resume();
-    }
-
-    masterGain = audioCtx.createGain();
-    masterGain.gain.setValueAtTime(0.01, audioCtx.currentTime);
-    masterGain.gain.exponentialRampToValueAtTime(0.18, audioCtx.currentTime + 1.2);
-    masterGain.connect(audioCtx.destination);
-
-    // Auspicious South Indian Raga Scale (Hamsadhwani / Mohanam Harmony)
-    const notes = [
-      261.63, // C4
-      293.66, // D4
-      329.63, // E4
-      392.00, // G4
-      493.88, // B4
-      523.25, // C5
-      587.33, // D5
-      659.25, // E5
-      783.99  // G5
-    ];
-
-    const melodyPattern = [
-      0, 1, 2, 3, 4, 5, 4, 3, 2, 1,
-      0, 2, 3, 5, 4, 3, 2, 0, 1, 2,
-      3, 4, 5, 6, 7, 6, 5, 4, 3, 2,
-      5, 4, 3, 2, 1, 0, 2, 3, 4, 5
-    ];
-
-    let noteIndex = 0;
-
-    function playNextNote() {
-      if (!isAudioPlaying || !audioCtx) return;
-
-      const freq = notes[melodyPattern[noteIndex % melodyPattern.length]];
-      noteIndex++;
-
-      const osc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
-
-      osc.type = 'triangle';
-      osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-
-      osc.frequency.exponentialRampToValueAtTime(freq * 1.015, audioCtx.currentTime + 0.12);
-      osc.frequency.exponentialRampToValueAtTime(freq, audioCtx.currentTime + 0.35);
-
-      const noteDuration = 0.55;
-      gain.gain.setValueAtTime(0.01, audioCtx.currentTime);
-      gain.gain.linearRampToValueAtTime(0.45, audioCtx.currentTime + 0.08);
-      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + noteDuration);
-
-      osc.connect(gain);
-      gain.connect(masterGain);
-
-      osc.start();
-      osc.stop(audioCtx.currentTime + noteDuration);
-
-      if (noteIndex % 4 === 1) {
-        playDronePad(notes[0], notes[3]);
-      }
-
-      audioTimer = setTimeout(playNextNote, 420);
-    }
-
-    function playDronePad(f1, f2) {
-      const droneOsc1 = audioCtx.createOscillator();
-      const droneOsc2 = audioCtx.createOscillator();
-      const droneGain = audioCtx.createGain();
-
-      droneOsc1.type = 'sine';
-      droneOsc1.frequency.setValueAtTime(f1 / 2, audioCtx.currentTime);
-      droneOsc2.type = 'sine';
-      droneOsc2.frequency.setValueAtTime(f2 / 2, audioCtx.currentTime);
-
-      droneGain.gain.setValueAtTime(0.01, audioCtx.currentTime);
-      droneGain.gain.linearRampToValueAtTime(0.08, audioCtx.currentTime + 0.4);
-      droneGain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 2.2);
-
-      droneOsc1.connect(droneGain);
-      droneOsc2.connect(droneGain);
-      droneGain.connect(masterGain);
-
-      droneOsc1.start();
-      droneOsc2.start();
-      droneOsc1.stop(audioCtx.currentTime + 2.2);
-      droneOsc2.stop(audioCtx.currentTime + 2.2);
-    }
-
+  function updateUiPlaying() {
     isAudioPlaying = true;
-    playNextNote();
-  } catch (e) {
-    console.warn('Web Audio playback error:', e);
+    audioBtn.classList.add('playing');
+    if (icon) icon.textContent = '❚❚';
+    if (tooltip) tooltip.textContent = 'Pause: Azhage Song';
   }
-}
 
-function stopWeddingMelody() {
-  isAudioPlaying = false;
-  if (audioTimer) {
-    clearTimeout(audioTimer);
-    audioTimer = null;
+  function updateUiPaused() {
+    isAudioPlaying = false;
+    audioBtn.classList.remove('playing');
+    if (icon) icon.textContent = '▶';
+    if (tooltip) tooltip.textContent = 'Play: Azhage (Tamil Love Song)';
   }
-  if (masterGain && audioCtx) {
-    masterGain.gain.linearRampToValueAtTime(0.001, audioCtx.currentTime + 0.5);
+
+  function toggleAudio() {
+    if (audioEl.paused) {
+      audioEl.play().then(() => {
+        updateUiPlaying();
+      }).catch(err => {
+        console.log('Audio playback prevented:', err);
+      });
+    } else {
+      audioEl.pause();
+      updateUiPaused();
+    }
   }
+
+  audioBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleAudio();
+  });
+
+  audioEl.addEventListener('play', updateUiPlaying);
+  audioEl.addEventListener('pause', updateUiPaused);
+  audioEl.addEventListener('ended', () => {
+    // Loop track
+    audioEl.currentTime = 0;
+    audioEl.play().catch(() => {});
+  });
+
+  // Attempt to start music gracefully on first user interaction anywhere on page
+  const startOnFirstGesture = () => {
+    if (audioEl.paused && !isAudioPlaying) {
+      audioEl.play().then(() => {
+        updateUiPlaying();
+      }).catch(() => {
+        // Browser requires direct user click on audio button
+      });
+    }
+    window.removeEventListener('click', startOnFirstGesture);
+    window.removeEventListener('touchstart', startOnFirstGesture);
+  };
+
+  window.addEventListener('click', startOnFirstGesture, { once: true });
+  window.addEventListener('touchstart', startOnFirstGesture, { once: true });
 }
 
 /* ==========================================================================
