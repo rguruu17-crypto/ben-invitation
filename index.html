@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prasanth B &amp; Shalini P | Engagement Invitation</title>
+  <meta name="description" content="The families cordially invite you to celebrate the auspicious engagement ceremony of Prasanth B & Shalini P at Hotel Temple IN, Vayalur Road, Trichy.">
+  <meta name="theme-color" content="#943D1D">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Prasanth B &amp; Shalini P Engagement Invitation">
+  <meta property="og:description" content="Join us in celebrating the auspicious engagement ceremony of Prasanth B & Shalini P on Monday, December 14th, 2026 at Hotel Temple IN, Trichy.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Canvas for Petal Animation -->
+  <canvas id="petal-canvas" aria-hidden="true"></canvas>
+
+  <!-- Top Center Floating Pill Navigation Bar (Exact Match to Image - 1) -->
+  <header class="top-nav-wrapper" id="top-nav">
+    <nav class="pill-navbar" aria-label="Main Navigation">
+      <a href="#hero" class="pill-monogram-badge" title="Prasanth &amp; Shalini">
+        <span class="monogram-text">P &amp; S</span>
+      </a>
+      <ul class="pill-nav-links">
+        <li><a href="#story-section" class="pill-nav-item">OUR STORY</a></li>
+        <li><a href="#events-section" class="pill-nav-item">EVENTS</a></li>
+        <li><a href="#venue-section" class="pill-nav-item">VENUE</a></li>
+      </ul>
+      <button class="pill-rsvp-btn" onclick="openRsvpModal()">RSVP</button>
+    </nav>
+  </header>
+
+  <!-- Offcanvas Navigation Menu Drawer -->
+  <div class="nav-drawer-overlay" id="drawer-overlay" onclick="closeNavDrawer()"></div>
+  <nav class="nav-drawer" id="nav-drawer" aria-label="Main Navigation">
+    <div class="drawer-header">
+      <span class="drawer-title">Prasanth &amp; Shalini</span>
+      <button class="drawer-close-btn" onclick="closeNavDrawer()" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="drawer-ganesha">
+      <img src="assets/ganesha_custom.png" alt="Lord Ganesha" class="ganesha-drawer-img">
+      <span class="drawer-ganesha-title">Om Shri Ganeshaya Namah</span>
+      <span class="drawer-sanskrit">Auspicious Engagement Ceremony</span>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="#hero" onclick="closeNavDrawer()">Invitation</a></li>
+      <li><a href="#story-section" onclick="closeNavDrawer()">Our Story</a></li>
+      <li><a href="#countdown-section" onclick="closeNavDrawer()">Counting Down</a></li>
+      <li><a href="#events-section" onclick="closeNavDrawer()">Ceremonies</a></li>
+      <li><a href="#venue-section" onclick="closeNavDrawer()">Venue &amp; Trichy</a></li>
+      <li><a href="#wishes-section" onclick="closeNavDrawer()">Wishes &amp; Blessings</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <button class="drawer-rsvp-btn" onclick="closeNavDrawer(); openRsvpModal();">Confirm Your RSVP</button>
+      <p class="drawer-date">Monday, December 14th, 2026<br>Hotel Temple IN, Trichy</p>
+    </div>
+  </nav>
+
+  <!-- Main Hero View (Exact Match to Reference Image) -->
+  <main>
+    <section class="hero-section" id="hero">
+      <!-- Living Temple Video Background Wrapper -->
+      <div class="hero-bg-wrapper">
+        <video class="hero-bg-video" id="hero-bg-video" autoplay muted loop playsinline preload="auto" poster="assets/temple_bg.jpg">
+          <source src="assets/Website_video_animation_with_water_seamless.mp4" type="video/mp4">
+          <img src="assets/temple_bg.jpg" alt="South Indian Temple Gopuram Watercolor Background" class="hero-bg-img" id="hero-bg">
+        </video>
+        <div class="hero-bg-overlay"></div>
+      </div>
+
+      <!-- Left Vertical Year / Decorative Accent -->
+      <div class="hero-vertical-accent" aria-hidden="true">
+        <span class="vertical-year">2026</span>
+        <div class="vertical-line"></div>
+      </div>
+
+      <!-- Center Invitation Content Card -->
+      <div class="invitation-card">
+        
+        <!-- Sacred Ganesha Custom Motif (User Provided) -->
+        <div class="ganesha-container" title="Om Shri Ganeshaya Namah">
+          <img src="assets/ganesha_custom.png" alt="Lord Ganesha" class="ganesha-custom-img">
+        </div>
+
+        <!-- Sacred Invocation -->
+        <p class="sacred-invocation">Om Shri Ganeshaya Namah</p>
+
+        <!-- Cordial Invite Text -->
+        <p class="invite-intro">
+          The Baskaran and Pitchainuthu families cordially invite you to join us in<br>
+          celebrating the auspicious Engagement ceremony of
+        </p>
+
+        <!-- Bride & Groom Names -->
+        <div class="names-wrapper">
+          <h1 class="couple-names">
+            <span class="groom-name">Prasanth&nbsp;B</span>
+            <span class="names-amp">&amp;</span>
+            <span class="bride-name">Shalini&nbsp;P</span>
+          </h1>
+        </div>
+
+        <!-- Lineage / Parents Grid -->
+        <div class="parents-grid">
+          <div class="parent-col left">
+            <span class="parent-relation">Son of</span>
+            <span class="parent-names">Baskaran N &amp; Sagunthala B</span>
+          </div>
+          <div class="parents-divider" aria-hidden="true"></div>
+          <div class="parent-col right">
+            <span class="parent-relation">Daughter of</span>
+            <span class="parent-names">Pitchainuthu A &amp; Sivagami P</span>
+          </div>
+        </div>
+
+        <!-- Auspicious Date -->
+        <div class="wedding-dates">
+          <time datetime="2026-12-14">December 14, Monday • 2026</time>
+        </div>
+
+        <!-- Destination & Venue -->
+        <div class="wedding-venue">
+          <p class="resort-name">Hotel Temple IN</p>
+          <p class="resort-location">Vayalur Rd, Rettai Vaikal, Ram Nagar, Vasan City, Trichy, Tamil Nadu 620102</p>
+        </div>
+
+        <!-- Quick Action Links -->
+        <div class="hero-quick-actions">
+          <button class="btn-hero-primary" onclick="openRsvpModal()">
+            <span class="btn-icon">💌</span> Respond to RSVP
+          </button>
+          <button class="btn-hero-secondary" onclick="addToCalendar()">
+            <span class="btn-icon">📅</span> Add to Calendar
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Bottom Center Scroll Arch & Indicator -->
+      <a href="#story-section" class="scroll-down-arch" aria-label="Scroll down to view our story and engagement details">
+        <div class="arch-badge">
+          <svg class="arch-svg" viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 30 5 C 38 12 50 16 52 28 C 54 40 48 48 30 54 C 12 48 6 40 8 28 C 10 16 22 12 30 5 Z" stroke="#943D1D" stroke-width="2" fill="rgba(250, 245, 237, 0.85)" />
+            <path d="M 30 20 L 30 42" stroke="#943D1D" stroke-width="2.2" stroke-linecap="round" />
+            <path d="M 23 35 L 30 43 L 37 35" stroke="#943D1D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+      </a>
+
+      <!-- Bottom Right Audio Control Button -->
+      <div class="audio-widget">
+        <button class="audio-toggle-btn" id="audio-toggle" title="Play Traditional Nadaswaram &amp; Flute Melody" aria-label="Toggle Auspicious Music">
+          <div class="audio-waves" aria-hidden="true">
+            <span class="wave"></span>
+            <span class="wave"></span>
+            <span class="wave"></span>
+          </div>
+          <span class="audio-icon" id="audio-icon">▶</span>
+        </button>
+        <span class="audio-tooltip" id="audio-tooltip">Music: Nadaswaram &amp; Flute</span>
+      </div>
+
+      <!-- Bottom Floating Petal Toggle Button -->
+      <div class="petal-widget">
+        <button class="petal-toggle-btn" id="petal-toggle" title="Toggle Falling Flower Petals" aria-label="Toggle Flower Petals">
+          🌸
+        </button>
+      </div>
+
+    </section>
+
+    <!-- Couple's Story Section (Two Different Worlds, One Beautiful Story) -->
+    <section class="section story-section" id="story-section">
+      <div class="container story-container">
+        
+        <!-- Story Main Header -->
+        <div class="story-header text-center story-reveal reveal-zoom">
+          <div class="section-badge">Our Journey</div>
+          <h2 class="script-hero-title">How It All Began</h2>
+          <p class="script-hero-subtitle">Two different worlds, one beautiful story <span class="script-heart">♥</span></p>
+        </div>
+
+        <!-- Our Story Flow: Roots, College & Destiny (Exact Match to Image - 2) -->
+        <div class="story-image2-flow">
+          
+          <!-- Stage 1: His Home & Her Home Side-by-Side (Matching Image - 2) -->
+          <div class="roots-split-stage">
+            
+            <!-- Left: His Roots (Trichy Fort in Back, Boy Traveler in Front) -->
+            <div class="story-root-card left-card story-reveal reveal-left">
+              <div class="landmark-character-scene">
+                <div class="ripped-landmark-card">
+                  <img src="assets/story_trichy_fort.jpg" alt="Trichy Rockfort Temple" class="ripped-landmark-img">
+                </div>
+                <img src="assets/traveler_boy_clean.png" alt="Prasanth - Traveler" class="scene-traveler-sticker sticker-boy">
+              </div>
+              <div class="story-script-caption text-center">
+                <h4 class="script-city">Trichy</h4>
+                <p class="script-tag">His roots <span class="script-heart">♥</span></p>
+              </div>
+            </div>
+
+            <!-- Central Continuous Dotted Connector & Heart -->
+            <div class="roots-center-trail story-reveal reveal-pop delay-1" aria-hidden="true">
+              <div class="trail-arc-wrapper">
+                <svg class="trail-arc-svg" viewBox="0 0 120 60" fill="none">
+                  <path d="M 5 45 Q 60 5 58 52" stroke="#7A685D" stroke-width="2.2" stroke-dasharray="4 4" fill="none"/>
+                  <path d="M 115 45 Q 60 5 62 52" stroke="#7A685D" stroke-width="2.2" stroke-dasharray="4 4" fill="none"/>
+                </svg>
+                <div class="trail-heart">♥</div>
+              </div>
+              <div class="trail-vertical-stem"></div>
+            </div>
+
+            <!-- Right: Her Home (Trichy Srirangam Gopuram in Back, Girl Traveler in Front) -->
+            <div class="story-root-card right-card story-reveal reveal-right delay-2">
+              <div class="landmark-character-scene">
+                <div class="ripped-landmark-card">
+                  <img src="assets/story_trichy_her.jpg" alt="Trichy Srirangam Temple" class="ripped-landmark-img">
+                </div>
+                <img src="assets/traveler_girl_clean.png" alt="Shalini - Traveler" class="scene-traveler-sticker sticker-girl">
+              </div>
+              <div class="story-script-caption text-center">
+                <h4 class="script-city">Trichy</h4>
+                <p class="script-tag">Her home <span class="script-heart">♥</span></p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Stage 2: Meeting at College (K. Ramakrishnan College of Engineering) -->
+          <div class="story-milestone-stage text-center story-reveal reveal-zoom">
+            <div class="krce-college-card-wrap">
+              <img src="assets/ff763fce-493e-49fd-94dc-5a6db926a0a4.png" alt="K. Ramakrishnan College of Engineering (KRCE), Trichy" class="krce-college-img">
+            </div>
+            <div class="story-script-caption text-center">
+              <h4 class="script-city">Trichy</h4>
+              <p class="script-subtitle">Ramakrishnan College of Engineering</p>
+              <p class="script-tag">Where our story truly began <span class="script-heart">♥</span></p>
+            </div>
+          </div>
+
+          <!-- Central Connecting Vertical Dotted Line -->
+          <div class="story-vertical-dashed-trail story-reveal delay-1"></div>
+
+          <!-- Stage 3: Same City / New Beginnings / Us ♥ -->
+          <div class="story-milestone-stage text-center story-reveal reveal-zoom">
+            <div class="ripped-photo-wrap ripped-wide">
+              <img src="assets/Campus%20Greetings%20at%20Engineering%20College.png" alt="Campus Greetings at Engineering College - Prasanth B &amp; Shalini P" class="ripped-photo-img">
+            </div>
+            <div class="story-script-caption text-center">
+              <h4 class="script-city">Same City</h4>
+              <p class="script-subtitle">New Beginnings</p>
+              <p class="script-tag">Us <span class="script-heart">♥</span></p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Part 2: The Timeline of Milestones (Alternating Vertical Timeline with Years) -->
+        <div class="story-timeline-section">
+          <div class="timeline-central-stem"></div>
+
+          <!-- Year 2023 -->
+          <div class="timeline-row row-left story-reveal">
+            <div class="timeline-node">
+              <span class="timeline-year-tag">2023</span>
+            </div>
+            
+            <div class="timeline-col-card">
+              <div class="polaroid-card polaroid-tilt-left">
+                <div class="washi-tape"></div>
+                <div class="polaroid-img-wrapper">
+                  <img src="assets/story_bangalore.jpg" alt="Temple visit & First Coffee" class="polaroid-img">
+                </div>
+                <div class="polaroid-caption">
+                  <span class="polaroid-tag-text">Temple visit</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-col-text">
+              <div class="story-pill-badge">Our first walk of love</div>
+              <p class="timeline-quote">“Different paths, same destination.”</p>
+            </div>
+          </div>
+
+          <!-- Year 2024 -->
+          <div class="timeline-row row-right story-reveal">
+            <div class="timeline-node">
+              <span class="timeline-year-tag">2024</span>
+            </div>
+
+            <div class="timeline-col-text">
+              <div class="story-pill-badge">Check-ins &amp; Adventures</div>
+              <p class="timeline-quote">“New places, new memories to cherish.”</p>
+            </div>
+
+            <div class="timeline-col-card">
+              <div class="polaroid-card polaroid-tilt-right">
+                <div class="washi-tape"></div>
+                <div class="polaroid-img-wrapper">
+                  <img src="assets/story_proposal.jpg" alt="City nights" class="polaroid-img">
+                </div>
+                <div class="polaroid-caption">
+                  <span class="polaroid-tag-text">City nights</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Year 2025 -->
+          <div class="timeline-row row-left story-reveal">
+            <div class="timeline-node">
+              <span class="timeline-year-tag">2025</span>
+            </div>
+
+            <div class="timeline-col-card">
+              <div class="polaroid-card polaroid-tilt-left">
+                <div class="washi-tape"></div>
+                <div class="mandala-art-wrapper mini-mandala">
+                  <svg class="mandala-svg" viewBox="0 0 160 160" fill="none">
+                    <circle cx="80" cy="80" r="65" stroke="#C59B4B" stroke-width="2" stroke-dasharray="3 3"/>
+                    <circle cx="80" cy="80" r="50" stroke="#943D1D" stroke-width="2"/>
+                    <path d="M 35 80 Q 80 40 125 80 Q 80 120 35 80 Z" stroke="#C59B4B" stroke-width="2"/>
+                    <circle cx="80" cy="80" r="18" fill="#882D1D"/>
+                    <circle cx="80" cy="80" r="7" fill="#E7C986"/>
+                  </svg>
+                </div>
+                <div class="polaroid-caption">
+                  <span class="polaroid-tag-text">Our Festive Week</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-col-text">
+              <div class="story-pill-badge">Our Festive Week</div>
+              <p class="timeline-quote">“Two families, one bigger happiness.”</p>
+            </div>
+          </div>
+
+          <!-- Year 2026 -->
+          <div class="timeline-row row-right story-reveal">
+            <div class="timeline-node">
+              <span class="timeline-year-tag">2026</span>
+            </div>
+
+            <div class="timeline-col-text">
+              <div class="story-pill-badge">Marriage &amp; Forever</div>
+              <p class="timeline-quote">“Forever held hand-in-hand.”</p>
+            </div>
+
+            <div class="timeline-col-card">
+              <div class="polaroid-card polaroid-tilt-right">
+                <div class="washi-tape"></div>
+                <div class="polaroid-img-wrapper">
+                  <img src="assets/story_bangalore.jpg" alt="Marriage" class="polaroid-img">
+                </div>
+                <div class="polaroid-caption">
+                  <span class="polaroid-tag-text">Marriage</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Part 3: The Culmination Finale -->
+        <div class="story-finale text-center story-reveal reveal-zoom">
+          <span class="story-pretitle">Same journey, a lifetime together ❤️</span>
+          <div class="polaroid-card polaroid-center polaroid-wide finale-card">
+            <div class="washi-tape"></div>
+            <div class="polaroid-img-wrapper">
+              <img src="assets/story_proposal.jpg" alt="From different paths to one heart" class="polaroid-img">
+            </div>
+            <div class="polaroid-caption">
+              <span class="heart-tag">From different paths to one heart ❤️</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Countdown Section -->
+    <section class="section countdown-section" id="countdown-section">
+      <div class="container">
+        <div class="section-badge">Auspicious Beginning</div>
+        <h2 class="section-title">Counting Down to the Sacred Engagement</h2>
+        <p class="section-subtitle">Join us in celebrating the holy promise of Prasanth B &amp; Shalini P</p>
+        
+        <div class="timer-grid" id="countdown-timer">
+          <div class="timer-box">
+            <span class="timer-number" id="days">--</span>
+            <span class="timer-label">Days</span>
+          </div>
+          <div class="timer-sep">:</div>
+          <div class="timer-box">
+            <span class="timer-number" id="hours">--</span>
+            <span class="timer-label">Hours</span>
+          </div>
+          <div class="timer-sep">:</div>
+          <div class="timer-box">
+            <span class="timer-number" id="minutes">--</span>
+            <span class="timer-label">Minutes</span>
+          </div>
+          <div class="timer-sep">:</div>
+          <div class="timer-box">
+            <span class="timer-number" id="seconds">--</span>
+            <span class="timer-label">Seconds</span>
+          </div>
+        </div>
+
+        <div class="countdown-blessing">
+          <p>“Two lives, two hearts, joined together in friendship, united forever in love.”</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Auspicious Events Timeline -->
+    <section class="section events-section" id="events-section">
+      <div class="container">
+        <div class="section-badge">Ceremony Itinerary</div>
+        <h2 class="section-title">Order of Auspicious Ceremonies</h2>
+        <p class="section-subtitle">Monday, December 14th, 2026 • Hotel Temple IN, Trichy</p>
+
+        <div class="events-timeline">
+          <!-- Event 1: Engagement -->
+          <div class="event-card">
+            <div class="event-card-tag">Auspicious Vow</div>
+            <div class="event-date-pill">Monday, Dec 14 • 10:00 AM – 11:30 AM</div>
+            <div class="event-icon">💍</div>
+            <h3 class="event-title">Engagement (Nischayathartham)</h3>
+            <p class="event-desc">
+              Reading of the sacred Lagna Patrika, exchange of auspicious thamboolam by family elders, and exchange of rings between Prasanth and Shalini, followed by a grand traditional feast.
+            </p>
+            <div class="event-details">
+              <span>📍 Grand Mandapam, Hotel Temple IN</span>
+              <span>👗 Silk Saree &amp; Traditional Silk Dhoti</span>
+              <span>🌿 Traditional South Indian Virundhu</span>
+            </div>
+          </div>
+
+          <!-- Event 2: Marriage (Centerpiece Muhurtham) -->
+          <div class="event-card muhurtham-card">
+            <div class="muhurtham-tag">Subha Muhurtham</div>
+            <div class="event-date-pill">Subha Muhurtham • Auspicious Morning</div>
+            <div class="event-icon">🪔</div>
+            <h3 class="event-title">Holy Marriage (Thirumangalyam)</h3>
+            <p class="event-desc">
+              The sacred wedding ceremony, tying of the sacred Thirumangalyam, Saptapadi (seven holy steps), and seeking heartfelt blessings from beloved parents and elders.
+            </p>
+            <div class="event-details">
+              <span>📍 Grand Mandapam, Hotel Temple IN</span>
+              <span>👗 Kanchipuram Silk Saree &amp; Pattu Veshti</span>
+              <span>✨ Sacred Vedic Mantras &amp; Mangala Isai</span>
+            </div>
+          </div>
+
+          <!-- Event 3: Reception -->
+          <div class="event-card">
+            <div class="event-card-tag">Grand Gala</div>
+            <div class="event-date-pill">Evening Celebration • 6:30 PM Onwards</div>
+            <div class="event-icon">🎉</div>
+            <h3 class="event-title">Wedding Reception</h3>
+            <p class="event-desc">
+              An evening of joyous festivities, congratulating the newlywed couple, capturing timeless photo memories with family and friends, and a sumptuous celebration dinner.
+            </p>
+            <div class="event-details">
+              <span>📍 Royal Banquet Hall, Hotel Temple IN</span>
+              <span>👗 Festive &amp; Elegant Evening Attire</span>
+              <span>🍽️ Grand Celebration Feast &amp; Music</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Venue & Destination Section -->
+    <section class="section venue-section" id="venue-section">
+      <div class="container">
+        <div class="section-badge">The Venue</div>
+        <h2 class="section-title">Hotel Temple IN, Trichy</h2>
+        <p class="section-subtitle">Located conveniently on Vayalur Road in the temple heartland of Tiruchirappalli</p>
+
+        <div class="venue-card-wrapper">
+          <div class="venue-info">
+            <h3 class="venue-name-highlight">Warm Hospitality &amp; Grand Celebrations</h3>
+            <p class="venue-desc">
+              Situated in Vasan City on Vayalur Road, Hotel Temple IN provides a refined, comfortable setting for auspicious family gatherings, surrounded by the cultural heritage and divine shrines of Trichy.
+            </p>
+            <ul class="venue-perks">
+              <li>📍 <strong>Full Address:</strong> Hotel Temple IN, Vayalur Rd, Rettai Vaikal, Ram Nagar, Vasan City, Trichy, Tamil Nadu 620102</li>
+              <li>🚗 <strong>Connectivity:</strong> Easy access from Trichy Junction Railway Station (~7 km) and Trichy International Airport (~12 km)</li>
+              <li>🛕 <strong>Sacred Shrines:</strong> Close to Sri Vayalur Murugan Temple, Srirangam Ranganathaswamy Temple &amp; Rockfort Temple</li>
+              <li>🅿️ <strong>Guest Comfort:</strong> Spacious parking, air-conditioned banqueting halls, and dedicated guest reception</li>
+            </ul>
+            <div class="venue-btn-group">
+              <a href="https://maps.google.com/?q=Hotel+Temple+IN+Vayalur+Rd+Rettai+Vaikal+Ram+Nagar+Vasan+City+Trichy+Tamil+Nadu+620102" target="_blank" rel="noopener noreferrer" class="btn-directions">
+                📍 Open in Google Maps
+              </a>
+              <button class="btn-travel-info" onclick="toggleTravelTips()">
+                ℹ️ Travel &amp; Landmarks
+              </button>
+            </div>
+            <div class="travel-tips-box" id="travel-tips">
+              <h4>Travel Directions to Venue:</h4>
+              <p>From Trichy Central Bus Stand or Railway Junction, proceed along Vayalur Main Road towards Rettai Vaikal. Hotel Temple IN is conveniently located in Vasan City, Ram Nagar. Auto-rickshaws, cabs, and local buses are readily available.</p>
+            </div>
+          </div>
+
+          <div class="venue-gallery-preview">
+            <div class="venue-badge-pill">Tiruchirappalli, Tamil Nadu</div>
+            <div class="venue-visual-art">
+              <div class="art-card">
+                <span class="art-icon">🛕</span>
+                <h4>Temple City Ambiance</h4>
+                <p>Blessed by the sacred aura of legendary Dravidian temple architecture.</p>
+              </div>
+              <div class="art-card">
+                <span class="art-icon">🎉</span>
+                <h4>Auspicious Banqueting</h4>
+                <p>Spacious, fully air-conditioned halls designed for holy rituals and family festivities.</p>
+              </div>
+              <div class="art-card">
+                <span class="art-icon">🍛</span>
+                <h4>Authentic Feast</h4>
+                <p>Traditional Tamil festive virundhu prepared with love and auspicious devotion.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wishes & Guestbook Section -->
+    <section class="section wishes-section" id="wishes-section">
+      <div class="container">
+        <div class="section-badge">Guestbook</div>
+        <h2 class="section-title">Shower Your Blessings</h2>
+        <p class="section-subtitle">Leave your warm wishes and blessings for Prasanth B &amp; Shalini P</p>
+
+        <div class="wishes-wrapper">
+          <form class="wishes-form" id="wishes-form" onsubmit="handleWishSubmit(event)">
+            <div class="form-row">
+              <input type="text" id="wish-author" class="form-input" placeholder="Your Name" required>
+              <input type="text" id="wish-relation" class="form-input" placeholder="Relationship / Family / Friend" required>
+            </div>
+            <textarea id="wish-message" class="form-input form-textarea" rows="3" placeholder="Write your blessing or message for the couple..." required></textarea>
+            <button type="submit" class="btn-submit-wish">Bless the Couple 🌸</button>
+          </form>
+
+          <div class="wishes-stream" id="wishes-stream">
+            <div class="wish-item">
+              <div class="wish-header">
+                <strong>Suresh &amp; Deepa</strong>
+                <span class="wish-meta">Family Friends</span>
+              </div>
+              <p class="wish-body">“Heartiest congratulations Prasanth and Shalini on your auspicious engagement! May Lord Ganesha bless you both with endless happiness, health, and prosperity!”</p>
+            </div>
+            <div class="wish-item">
+              <div class="wish-header">
+                <strong>Vignesh Kumar</strong>
+                <span class="wish-meta">Cousin</span>
+              </div>
+              <p class="wish-body">“Super thrilled for you both! Looking forward to celebrating on December 14th in Trichy. Wishing you a beautiful lifetime together!”</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Interactive RSVP Modal -->
+  <div class="modal-backdrop" id="rsvp-modal" aria-hidden="true" role="dialog" aria-labelledby="rsvp-modal-title">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeRsvpModal()" aria-label="Close RSVP Modal">&times;</button>
+      
+      <div class="modal-header">
+        <div class="modal-ganesha-badge"><img src="assets/ganesha_custom.png" alt="Lord Ganesha" class="ganesha-modal-img"></div>
+        <h3 id="rsvp-modal-title" class="modal-title">RSVP to Prasanth &amp; Shalini's Engagement</h3>
+        <p class="modal-subtitle">Kindly confirm your gracious presence for December 14th, 2026</p>
+      </div>
+
+      <form id="rsvp-form" class="modal-form" onsubmit="handleRsvpSubmit(event)">
+        <div class="form-group">
+          <label for="rsvp-name">Full Name *</label>
+          <input type="text" id="rsvp-name" class="form-input" placeholder="e.g. R. Venkatesh" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="rsvp-email">Email Address</label>
+            <input type="email" id="rsvp-email" class="form-input" placeholder="name@example.com">
+          </div>
+          <div class="form-group">
+            <label for="rsvp-phone">Phone / WhatsApp *</label>
+            <input type="tel" id="rsvp-phone" class="form-input" placeholder="+91 98765 43210" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Will you be joining us? *</label>
+          <div class="radio-cards-group">
+            <label class="radio-card">
+              <input type="radio" name="attendance" value="attending" checked onchange="toggleGuestFields(true)">
+              <div class="card-inner">
+                <span class="radio-emoji">🎉</span>
+                <span class="radio-text">Joyfully Attending</span>
+              </div>
+            </label>
+            <label class="radio-card">
+              <input type="radio" name="attendance" value="declined" onchange="toggleGuestFields(false)">
+              <div class="card-inner">
+                <span class="radio-emoji">💐</span>
+                <span class="radio-text">Regretfully Decline (Sending Blessings)</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div id="attending-fields">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="rsvp-guests">Number of Guests Attending *</label>
+              <select id="rsvp-guests" class="form-input">
+                <option value="1">1 Person</option>
+                <option value="2" selected>2 Persons</option>
+                <option value="3">3 Persons</option>
+                <option value="4">4 Persons</option>
+                <option value="5+">5+ Persons (Family)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="rsvp-diet">Dietary Preferences</label>
+              <select id="rsvp-diet" class="form-input">
+                <option value="traditional-veg">South Indian Traditional Vegetarian</option>
+                <option value="jain">Jain Vegetarian</option>
+                <option value="no-restrictions">No Special Restrictions</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Which ceremonies will you attend?</label>
+            <div class="checkbox-pills">
+              <label class="pill-check">
+                <input type="checkbox" name="events" value="engagement" checked>
+                <span>Engagement (Nischayathartham)</span>
+              </label>
+              <label class="pill-check">
+                <input type="checkbox" name="events" value="marriage" checked>
+                <span>Holy Marriage (Subha Muhurtham)</span>
+              </label>
+              <label class="pill-check">
+                <input type="checkbox" name="events" value="reception" checked>
+                <span>Wedding Reception</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="rsvp-message">Personal Message / Wishes</label>
+          <textarea id="rsvp-message" class="form-input form-textarea" rows="2" placeholder="Leave a sweet message for Prasanth & Shalini..."></textarea>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn-cancel" onclick="closeRsvpModal()">Cancel</button>
+          <button type="submit" class="btn-confirm-rsvp" id="rsvp-submit-btn">
+            Confirm Engagement RSVP
+          </button>
+        </div>
+      </form>
+
+      <!-- Confirmation Card inside modal -->
+      <div class="rsvp-success-view" id="rsvp-success-view" style="display: none;">
+        <div class="success-icon">💐</div>
+        <h4 class="success-title">Thank You! Your RSVP is Confirmed.</h4>
+        <p class="success-desc" id="success-message">
+          We are truly delighted to celebrate this auspicious day with you. A confirmation summary has been saved.
+        </p>
+        <button class="btn-hero-primary" onclick="closeRsvpModal()">Return to Invitation</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-kolam" aria-hidden="true">❖ ॐ ❖</div>
+      <h3 class="footer-names">Prasanth B &amp; Shalini P</h3>
+      <p class="footer-dates">Monday, December 14th, 2026 • Hotel Temple IN, Trichy</p>
+      <p class="footer-families">With Blessings from the Baskaran &amp; Pitchainuthu Families</p>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Prasanth &amp; Shalini Engagement Ceremony. Crafted with love &amp; auspicious joy.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
